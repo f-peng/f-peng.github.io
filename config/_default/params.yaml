@@ -14,8 +14,8 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'A highly-customizable Hugo blog theme powered by Hugo Blox Builder.'
-    twitter: 'GetResearchDev'
+    description: 'Cybersecurity Insights to Inspire You.'
+    twitter: 'Cybowl'
   analytics:
     google_analytics: ''
     baidu_tongji: ''
@@ -36,7 +36,7 @@ header:
 # Site footer
 footer:
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
+    notice: '© {year} - Cyberowl.eu - This work is licensed under {license}'
     license:
       enable: true
       allow_derivatives: false
@@ -55,6 +55,6 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/HugoBlox/hugo-blox-builder/'
+    url: 'https://f-peng.github.io/'
     content_dir: starters/blog/content
     branch: main

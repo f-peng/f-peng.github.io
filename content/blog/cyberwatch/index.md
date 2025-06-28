@@ -1,0 +1,41 @@
+---
+title: Cyber veille du 27.06.2025
+date: 2025-06-27
+---
+
+### Introduction
+
+La cybersécurité est plus que jamais au cœur des préoccupations mondiales, avec des incidents qui touchent tous les secteurs, des infrastructures critiques aux entreprises privées. Voici un aperçu des événements marquants en France et à l'international, ainsi que des vulnérabilités critiques récentes.
+
+### 🇫🇷 En France
+
+- **Airbus Protect** détecte des centaines de cyberattaques chaque semaine, illustrant l'ampleur des menaces actuelles sur les infrastructures critiques et les entreprises technologiques. Airbus Protect, une filiale d'Airbus, joue un rôle crucial dans la protection des systèmes d'information contre les cybermenaces, en surveillant et en répondant aux incidents de sécurité pour ses clients dans les secteurs de l'aéronautique et de la défense
+.
+- **Cybersécurité civile** : La Cour des comptes a publié un rapport sur l'organisation de la cybersécurité civile en France, soulignant la nécessité de revoir les missions de l'Agence nationale de la sécurité des systèmes d'information (ANSSI) pour mieux répondre à la multiplication des cyberattaques
+.
+
+### 🌍 À l’international
+
+- **Hawaiian Airlines** a été victime d'une cyberattaque affectant ses systèmes de réservation. Malgré l'incident, les vols n'ont pas été perturbés, et la compagnie a collaboré avec des experts en cybersécurité pour enquêter et restaurer les systèmes
+.
+- **Tonga** : Le système informatique de santé des îles Tonga a été paralysé par une cyberattaque. Les autorités ont refusé de payer la rançon d’un million de dollars demandée par les hackers, montrant une position ferme contre le chantage numérique
+.
+- **NHS britannique** : Une cyberattaque russe a coûté la vie à un patient anglais, illustrant les conséquences tragiques des attaques sur les infrastructures critiques de santé
+.
+- **Western Sydney University** : Une ancienne étudiante a été arrêtée pour une série de cyberattaques contre son ancienne université, exploitant des vulnérabilités pour modifier des données académiques et tenter une extorsion
+.
+
+### 🔐 Vulnérabilités critiques et élevées
+
+| CVE | Description | Score CVSS | Source |
+| --- | --- | --- | --- |
+| CVE-2024-37087 | Vulnérabilité de déni de service dans VMware vCenter Server | 5.3 | [CVE-2024-37087](https://www.cvedetails.com/cve/CVE-2024-37087/) |
+| CVE-2024-37086 | Vulnérabilité de lecture hors limites dans VMware ESXi | 6.8 | [CVE-2024-37086](https://www.cvedetails.com/cve/CVE-2024-37086/) |
+| CVE-2024-37085 | Vulnérabilité de contournement d'authentification dans VMware ESXi | 6.8 | [CVE-2024-37085](https://www.cvedetails.com/cve/CVE-2024-37085/) |
+| CVE-2024-37084 | Vulnérabilité d'exécution de code à distance dans Spring Cloud Data Flow | 9.8 | [CVE-2024-37084](https://www.cvedetails.com/cve/CVE-2024-37084/) |
+| CVE-2024-37081 | Vulnérabilités d'élévation de privilèges locaux dans VMware vCenter Server | 7.8 | [CVE-2024-37081](https://www.cvedetails.com/cve/CVE-2024-37081/) |
+| CVE-2024-37080 | Vulnérabilité de dépassement de tas dans VMware vCenter Server | 9.8 | [CVE-2024-37080](https://www.cvedetails.com/cve/CVE-2024-37080/) |
+
+### Conclusion
+
+Les cyberattaques continuent de croître en sophistication et en fréquence, ciblant des secteurs variés et exploitant des vulnérabilités critiques dans des logiciels largement utilisés. La vigilance et la mise à jour des systèmes sont essentielles pour se protéger contre ces menaces. Les organisations doivent adopter une approche proactive en matière de cybersécurité, en intégrant des pratiques de sécurité robustes et en restant informées des dernières vulnérabilités et des correctifs disponibles.

@@ -55,6 +55,6 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://f-peng.github.io/'
+    url: 'https://github.com/f-peng/f-peng.github.io'
     content_dir: starters/blog/content
     branch: main

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+<head>
+  {{ partial "site_head.html" . }}
+</head>
+<body>
+  {{ block "main" . }}{{ end }}
+  {{ partial "site_footer.html" . }}
+  {{ partial "matomo.html" . }}
+</body>
+</html>

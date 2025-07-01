@@ -24,7 +24,7 @@ _English version_
 
 # [Cybowl - A Fresh Take on Cybersecurity Intelligence](https://www.cybowl.eu)
 
-**Cybowl** is a lightweight cyber threat intelligence platform, built with [**Hugo**](https://github.com/gohugoio/hugo) and powered by [**Hugo Blox**](https://docs.hugoblox.com/)).
+**Cybowl** is a lightweight cyber threat intelligence platform, built with [**Hugo**](https://github.com/gohugoio/hugo) and powered by [**Hugo Blox**](https://docs.hugoblox.com/).
 
 # ⁉️ Why Cybowl?
 

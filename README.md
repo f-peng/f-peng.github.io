@@ -39,3 +39,9 @@ Your daily cyber insights, without the daily grind.
 * **Automated content curation** from high-quality threat intel feeds in both French and English.
 * **AI-powered summarization** (via Mistral) to deliver key takeaways at a glance.
 * A lightweight, fast-loading site — no distractions, just insights.
+
+## License
+
+The code in this repository is distributed under the terms of the MIT License. See [LICENSE.md](LICENSE.md) for details.
+
+All site content (posts, images and other material) is licensed under the Creative Commons Attribution-NonCommercial 4.0 International license. See [LICENSE_CONTENT.md](LICENSE_CONTENT.md) for details.

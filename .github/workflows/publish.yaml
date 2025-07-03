@@ -70,3 +70,27 @@ jobs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
+    - name: Test deployed site
+      id: test_site
+      continue-on-error: true
+      run: |
+        status=$(curl -o /dev/null -w "%{http_code}" -s ${{ steps.deployment.outputs.page_url }})
+        echo "HTTP status: $status"
+        echo "status=$status" >> "$GITHUB_OUTPUT"
+    - name: Retry deploy if 404
+      if: steps.test_site.outputs.status == '404'
+      uses: actions/github-script@v7
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          await github.rest.actions.createWorkflowDispatch({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            workflow_id: 'publish.yaml',
+            ref: 'main'
+          })
+    - name: Fail if 404
+      if: steps.test_site.outputs.status == '404'
+      run: |
+        echo "Site returned 404 after deploy"
+        exit 1

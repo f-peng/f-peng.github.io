@@ -69,3 +69,12 @@ footer {
   background-color: #1f2937;
   color: #e2e8f0;
 }
+
+html.dark .prose h1,
+html.dark .prose h2,
+html.dark .prose h3,
+html.dark .prose h4,
+html.dark .prose h5,
+html.dark .prose h6 {
+  color: #f1f5f9 !important;
+}

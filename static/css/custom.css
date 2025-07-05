@@ -34,7 +34,7 @@ a:hover {
 
 /* === NAVIGATION BAR === */
 nav {
-  background: linear-gradient(90deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
   color: #ffffff;
   padding: 1rem 2rem;
   display: flex;

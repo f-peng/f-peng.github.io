@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ .Lang }}" class="dark">
-<head>
   {{ partial "site_head.html" . }}
   {{ partial "custom_head.html" . }}
   <meta name="color-scheme" content="dark">
-</head>
 <body>
   {{ partial "site_header.html" . }}
   {{ block "main" . }}{{ end }}

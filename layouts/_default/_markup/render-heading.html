@@ -1,0 +1,8 @@
+{{- $level := .Level -}}
+{{- $id := .Anchor | safeURL -}}
+{{- $text := .Text | safeHTML -}}
+{{- if hasPrefix .Page.File.Path "blog/cyberwatch/" -}}
+<h{{ $level }} id="{{ $id }}" class="H{{ $level }}">{{ $text }}</h{{ $level }}>
+{{- else -}}
+<h{{ $level }} id="{{ $id }}">{{ $text }}</h{{ $level }}>
+{{- end -}}

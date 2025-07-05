@@ -1,43 +1,124 @@
-/* Instagram-inspired light theme */
+/* Design moderne, lisible et responsive */
 html {
     color-scheme: light;
+    scroll-behavior: smooth;
 }
+
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: #fafafa;
-    color: #262626;
+    background: #fff;
+    color: #1c1c1e;
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.75;
+    margin: 0;
+    padding: 0;
 }
 
+/* Titres */
 h1, h2, h3, h4, h5, h6 {
-    color: #262626;
-    margin-top: 0;
+    color: #1c1c1e;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
 }
 
+/* Paragraphes */
+p {
+    margin-bottom: 1rem;
+    max-width: 60ch;
+}
+
+/* Liens */
 a {
-    color: #00376b;
-    text-decoration: none;
+    color: #0056b3;
+    text-decoration: underline;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #0095f6;
+    color: #007bff;
 }
 
+/* Barre de navigation */
 nav {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    background: linear-gradient(90deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 nav a {
     color: #fff;
+    margin-left: 1rem;
+    font-weight: 500;
+    padding: 0.5rem;
 }
 
 nav a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
 }
 
+/* Contenu principal */
+main {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Sidebar */
+aside {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-left: 4px solid #e6683c;
+    margin-top: 2rem;
+}
+
+aside h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+aside a {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #262626;
+}
+
+aside a:hover {
+    color: #dc2743;
+}
+
+/* Footer */
 footer {
     background: #fafafa;
-    color: #8e8e8e;
+    color: #6c757d;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    aside {
+        border-left: none;
+        border-top: 4px solid #e6683c;
+    }
+
+    main {
+        padding: 1.5rem 1rem;
+    }
 }

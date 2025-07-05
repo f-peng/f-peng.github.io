@@ -1,0 +1,7 @@
+{{- $href := .Destination | safeURL -}}
+{{- $text := .Text | safeHTML -}}
+{{- if or (hasPrefix .Page.File.Path "blog/cyberwatch/") (eq .Page.File.Path "privacy.md") -}}
+<a href="{{ $href }}" class="anews-link"{{ with .Title }} title="{{ . }}"{{ end }}>{{ $text }}</a>
+{{- else -}}
+<a href="{{ $href }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ $text }}</a>
+{{- end -}}

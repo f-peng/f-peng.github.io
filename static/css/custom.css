@@ -63,8 +63,9 @@ nav a:hover {
 
 
 /* === MAIN CONTENT === */
-main, article, section, .content, .post-content, .single-content {
-  color: #eaeaea !important;
+body main, body article, body section,
+.content, .post-content, .single-content {
+  color: #eaeaea;
   background: transparent;
 }
 

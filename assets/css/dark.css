@@ -1,0 +1,49 @@
+/* Dark theme overrides */
+body {
+  background-color: #121212;
+  color: #e2e8f0;
+}
+
+html {
+  background-color: #121212;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #f1f5f9;
+}
+
+p, li {
+  color: #e2e8f0;
+}
+
+a {
+  color: #93c5fd;
+}
+
+.bg-white,
+.bg-gray-50,
+.bg-gray-100,
+.bg-slate-50 {
+  background-color: #1e293b !important;
+}
+
+.text-slate-900,
+.text-gray-900,
+.text-black {
+  color: #e2e8f0 !important;
+}
+
+nav {
+  background-color: #1f2937;
+}
+nav a {
+  color: #e2e8f0;
+}
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+footer {
+  background-color: #1f2937;
+  color: #e2e8f0;
+}

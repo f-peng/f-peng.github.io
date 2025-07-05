@@ -1,18 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ .Lang }}" class="dark" data-theme="dark">
+<html lang="{{ .Lang }}">
 <head>
   {{ partial "site_head.html" . }}
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="light">
+  <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
   <link rel="stylesheet" href="{{ "css/mobile.css" | relURL }}">
-  <style>
-    html { color-scheme: dark; }
-    body {
-      background: #000;
-      color: #e5e7eb;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-  </style>
 </head>
 <body>
   {{ partial "site_header.html" . }}

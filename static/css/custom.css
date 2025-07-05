@@ -53,6 +53,12 @@ nav a:hover {
   border-radius: 6px;
 }
 
+/* === MAIN CONTENT === */
+main, article, section, .content, .post-content, .single-content {
+  color: #eaeaea !important;
+  background: transparent;
+}
+
 /* === ARTICLE CARD / LIST === */
 .article-card, .post-box, .summary {
   background: #1e1e1e;
@@ -105,6 +111,17 @@ footer {
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.85rem;
+}
+
+/* === CODE BLOCKS & PRE === */
+pre, code {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  font-family: monospace;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
 }
 
 /* === RESPONSIVE === */

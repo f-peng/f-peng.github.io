@@ -12,6 +12,21 @@ h1, h2, h3, h4, h5, h6 {
   color: #f1f5f9;
 }
 
+/* Ensure bold text inside headings is legible */
+h1 strong,
+h2 strong,
+h3 strong,
+h4 strong,
+h5 strong,
+h6 strong {
+  color: inherit !important;
+}
+
+/* Keep bold text readable on dark background */
+strong {
+  color: #f1f5f9;
+}
+
 p, li {
   color: #e2e8f0;
 }

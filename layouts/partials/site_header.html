@@ -1,9 +1,15 @@
-<nav class="bg-gray-100 border-b border-gray-300">
+<nav class="bg-blue-900 text-white dark:bg-gray-900 dark:text-gray-100 shadow">
   <div class="container mx-auto flex items-center justify-between p-4">
-    <a class="text-xl font-semibold" href="{{ "/" | relURL }}">Cybowl</a>
-    <ul class="flex space-x-4">
+    <a class="text-2xl italic font-semibold" href="{{ "/" | relURL }}">Cybowl</a>
+    {{ $current := . }}
+    <ul class="flex space-x-6">
       {{ range site.Menus.main }}
-        <li><a class="hover:underline" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        <li>
+          <a href="{{ .URL | relURL }}"
+             class="px-4 py-2 rounded transition-colors {{ if $current.IsMenuCurrent "main" . }}bg-blue-700 text-white{{ else }}hover:bg-blue-700 hover:text-white{{ end }}">
+            {{ .Name }}
+          </a>
+        </li>
       {{ end }}
     </ul>
   </div>

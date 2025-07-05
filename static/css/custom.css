@@ -6,7 +6,7 @@ html {
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background: #121212;
-  color: #f5f5f5;
+  color: #eaeaea;
   font-size: 1rem;
   line-height: 1.75;
   margin: 0;
@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* === LINKS === */
 a {
-  color: #0095f6;
+  color: #66b2ff;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -56,11 +56,11 @@ nav a:hover {
 /* === ARTICLE CARD / LIST === */
 .article-card, .post-box, .summary {
   background: #1e1e1e;
-  color: #f0f0f0;
+  color: #e0e0e0;
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .article-card h2, .post-box h2 {
@@ -69,24 +69,31 @@ nav a:hover {
 }
 
 .article-card a {
-  color: #0095f6;
+  color: #66b2ff;
 }
 
 /* === SIDEBAR / TOC === */
 .sidebar, .toc, aside {
-  background: #1a1a1a;
-  color: #e0e0e0;
+  background: #1e1e1e;
+  color: #f0f0f0;
   padding: 1.5rem;
   border-left: 4px solid #dc2743;
 }
 
-.sidebar a {
+.sidebar h2, .toc h2 {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar a, .toc a {
   color: #f5f5f5;
   display: block;
   margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
-.sidebar a:hover {
+.sidebar a:hover, .toc a:hover {
   color: #ffca28;
   text-decoration: underline;
 }

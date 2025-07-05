@@ -28,10 +28,6 @@ h6 strong,
   color: inherit !important;
 }
 
-/* Keep all bold text readable on dark background */
-strong {
-  color: #ffffff !important;
-}
 
 h1 strong,
 h2 strong,
@@ -48,9 +44,9 @@ h6 strong,
   color: inherit !important;
 }
 
-/* Keep all bold text readable on dark background */
+/* Ensure bold text remains legible in dark mode */
 strong {
-  color: #f1f5f9 !important;
+  color: inherit !important;
 }
 
 p, li {

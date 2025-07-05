@@ -12,6 +12,11 @@ h1, h2, h3, h4, h5, h6 {
   color: #f1f5f9;
 }
 
+/* Keep bold text readable on dark background */
+strong {
+  color: #f1f5f9;
+}
+
 p, li {
   color: #e2e8f0;
 }

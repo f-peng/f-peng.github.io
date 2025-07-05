@@ -1,0 +1,10 @@
+<nav class="bg-gray-100 border-b border-gray-300">
+  <div class="container mx-auto flex items-center justify-between p-4">
+    <a class="text-xl font-semibold" href="{{ "/" | relURL }}">Cybowl</a>
+    <ul class="flex space-x-4">
+      {{ range site.Menus.main }}
+        <li><a class="hover:underline" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+</nav>

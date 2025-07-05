@@ -1,4 +1,4 @@
-{{/* Include custom dark theme styles */}}
+{{/* Load base theme first so our overrides take precedence */}}
+<link rel="stylesheet" href="/css/themes/blue.min.css">
 {{ $style := resources.Get "css/dark.css" | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-<link rel="stylesheet" href="/css/themes/blue.min.css">

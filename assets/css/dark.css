@@ -28,22 +28,6 @@ h6 strong,
   color: inherit !important;
 }
 
-
-h1 strong,
-h2 strong,
-h3 strong,
-h4 strong,
-h5 strong,
-h6 strong,
-.prose h1 strong,
-.prose h2 strong,
-.prose h3 strong,
-.prose h4 strong,
-.prose h5 strong,
-.prose h6 strong {
-  color: inherit !important;
-}
-
 /* Ensure bold text remains legible in dark mode */
 strong {
   color: inherit !important;

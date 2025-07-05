@@ -5,15 +5,15 @@ main:
   - name: Home
     url: /
     weight: 10
-  - name: Topics
-    url: tags/
-    weight: 20
+#  - name: Topics
+#    url: tags/
+#    weight: 20
   - name: Projets
     url: projects/
     weight: 30
-  - name: Uses
-    url: uses/
-    weight: 40
+#  - name: Uses
+#    url: uses/
+#    weight: 40
   - name: Vie privée
     url: privacy/
     weight: 50

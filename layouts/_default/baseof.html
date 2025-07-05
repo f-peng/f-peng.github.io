@@ -3,16 +3,8 @@
 <head>
   {{ partial "site_head.html" . }}
   <meta name="color-scheme" content="light">
+  <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
   <link rel="stylesheet" href="{{ "css/mobile.css" | relURL }}">
-  <style>
-    html { color-scheme: light; }
-    body {
-      background: #ffffff;
-      color: #111827;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-  </style>
 </head>
 <body>
   {{ partial "site_header.html" . }}

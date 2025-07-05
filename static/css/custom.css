@@ -1,0 +1,43 @@
+/* Instagram-inspired light theme */
+html {
+    color-scheme: light;
+}
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #fafafa;
+    color: #262626;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #262626;
+    margin-top: 0;
+}
+
+a {
+    color: #00376b;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0095f6;
+}
+
+nav {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: #fff;
+}
+
+nav a {
+    color: #fff;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+footer {
+    background: #fafafa;
+    color: #8e8e8e;
+}

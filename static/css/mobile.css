@@ -1,13 +1,14 @@
 @media (max-width: 640px) {
   body {
-    color: #1f2937;
+    background: #fafafa;
+    color: #262626;
     font-size: 1rem;
     line-height: 1.6;
   }
   h1, h2, h3, h4, h5, h6 {
-    color: #000000;
+    color: #262626;
   }
   footer {
-    color: #4b5563;
+    color: #8e8e8e;
   }
 }

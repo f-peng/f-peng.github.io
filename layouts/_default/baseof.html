@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ .Lang }}">
+<html lang="{{ .Lang }}" class="dark" data-theme="dark">
 <head>
   {{ partial "site_head.html" . }}
+  <meta name="color-scheme" content="dark">
+  <style>
+    html{color-scheme:dark;}
+    body{background:#000;color:#fff;}
+  </style>
 </head>
 <body>
   {{ partial "site_header.html" . }}

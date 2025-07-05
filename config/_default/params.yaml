@@ -31,7 +31,7 @@ header:
   navbar:
     enable: true
     show_search: true
-    show_theme_chooser: true
+    show_theme_chooser: false
 
 # Site footer
 footer:

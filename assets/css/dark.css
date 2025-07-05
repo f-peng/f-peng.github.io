@@ -1,0 +1,20 @@
+/* Dark theme overrides */
+body {
+  background-color: #121212;
+  color: #e2e8f0;
+}
+
+nav {
+  background-color: #1f2937;
+}
+nav a {
+  color: #e2e8f0;
+}
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+footer {
+  background-color: #1f2937;
+  color: #e2e8f0;
+}

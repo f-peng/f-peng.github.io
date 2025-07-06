@@ -1,7 +1,10 @@
 {{- $href := .Destination | safeURL -}}
 {{- $text := .Text | safeHTML -}}
+{{- $classes := slice -}}
 {{- if or (hasPrefix .Page.File.Path "blog/cyberwatch/") (eq .Page.File.Path "privacy.md") -}}
-<a href="{{ $href }}" class="anews-link"{{ with .Title }} title="{{ . }}"{{ end }}>{{ $text }}</a>
-{{- else -}}
-<a href="{{ $href }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ $text }}</a>
+  {{- $classes = $classes | append "anews-link" -}}
 {{- end -}}
+{{- if hasPrefix (.Text | plainify) "#" -}}
+  {{- $classes = $classes | append "hashtag-link" -}}
+{{- end -}}
+<a href="{{ $href }}"{{ if $classes }} class="{{ delimit $classes " " }}"{{ end }}{{ with .Title }} title="{{ . }}"{{ end }}>{{ $text }}</a>

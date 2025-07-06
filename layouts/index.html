@@ -9,13 +9,15 @@
     <div class="space-y-4">
       {{ range first 5 (where site.RegularPages "File.Dir" "blog/cyberwatch/") }}
         {{ $link := .RelPermalink }}
+        {{ $external := false }}
         {{ with .Params.source_link }}
           {{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}
             {{ $link = . }}
+            {{ $external = true }}
           {{ end }}
         {{ end }}
         <div class="article-card">
-          <h3 class="title"><a href="{{ $link }}">{{ .Title }}</a></h3>
+          <h3 class="title"><a href="{{ $link }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ .Title }}</a></h3>
           {{ with .Summary }}
             <p class="excerpt">{{ . }}</p>
           {{ end }}

@@ -1,0 +1,58 @@
+/* Custom styles for Cybowl */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #0f1117;
+  color: #e4eaf0;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  color: #e4eaf0;
+}
+
+.article-card {
+  background: #1a1c22;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease;
+}
+.article-card:hover {
+  transform: scale(1.02);
+  background: #21242b;
+}
+.article-card .title {
+  font-size: 1.25rem;
+  color: #e4eaf0;
+  font-weight: 600;
+}
+.article-card .excerpt {
+  color: #98a1b2;
+  margin-top: 0.5rem;
+}
+.article-card .badge {
+  background: #4cc9f0;
+  color: #0f1117;
+  border-radius: 8px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  background: #0f1117;
+  color: #98a1b2;
+}
+.footer a {
+  color: #4cc9f0;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}

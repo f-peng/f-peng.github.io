@@ -1,11 +1,11 @@
 /* Dark theme overrides */
 body {
-  background-color: #121212;
-  color: #e2e8f0;
+  background-color: #0f1117;
+  color: #e4eaf0;
 }
 
 html {
-  background-color: #121212;
+  background-color: #0f1117;
 }
 
 h1.lg\:text-6xl {
@@ -51,40 +51,40 @@ strong {
 }
 
 p, li {
-  color: #e2e8f0;
+  color: #e4eaf0;
 }
 
 a {
-  color: #93c5fd;
+  color: #4cc9f0;
 }
 
 .bg-white,
 .bg-gray-50,
 .bg-gray-100,
 .bg-slate-50 {
-  background-color: #1e293b !important;
+  background-color: #1a1c22 !important;
 }
 
 .text-slate-900,
 .text-gray-900,
 .text-black {
-  color: #e2e8f0 !important;
+  color: #e4eaf0 !important;
 }
 
 
 nav {
-  background-color: #1f2937;
+  background-color: #0f1117;
 }
 nav a {
-  color: #e2e8f0;
+  color: #e4eaf0;
 }
 nav a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
 footer {
-  background-color: #1f2937;
-  color: #e2e8f0;
+  background-color: #0f1117;
+  color: #e4eaf0;
 }
 
 html.dark .prose h1,

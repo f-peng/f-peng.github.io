@@ -1,12 +1,18 @@
 {{ define "main" }}
   <section class="container mx-auto px-4 my-8">
     <h1 class="text-3xl font-bold mb-4">{{ .Title }}</h1>
-    <ul class="space-y-2">
+    <div class="space-y-4">
       {{ range .Pages }}
-        <li>
-          <a class="text-blue-400 hover:underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </li>
+        <div class="article-card">
+          <h3 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          {{ with .Summary }}
+            <p class="excerpt">{{ . }}</p>
+          {{ end }}
+          {{ with .Params.category }}
+            <span class="badge">{{ . }}</span>
+          {{ end }}
+        </div>
       {{ end }}
-    </ul>
+    </div>
   </section>
 {{ end }}

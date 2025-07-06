@@ -1,13 +1,13 @@
 .post-layout {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
 @media (min-width: 768px) {
   .post-layout {
-    flex-direction: row;
-    align-items: flex-start;
+    grid-template-columns: 3fr 1fr;
+    align-items: start;
   }
   .toc-container {
     position: sticky;
@@ -15,6 +15,10 @@
     max-height: calc(100vh - 6rem);
     overflow-y: auto;
     width: 100%;
+    padding: 1rem;
+    background-color: #1f2937;
+    border-left: 3px solid #3b82f6;
+    border-radius: 0.5rem;
   }
 }
 

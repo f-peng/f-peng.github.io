@@ -78,6 +78,9 @@ markup:
       attribute:
         block: true
         title: true
+  tableOfContents:
+    startLevel: 3
+    endLevel: 4
 related:
   threshold: 80
   includeNewer: true

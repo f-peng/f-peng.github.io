@@ -1,13 +1,13 @@
 .post-layout {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
 @media (min-width: 768px) {
   .post-layout {
-    flex-direction: row;
-    align-items: flex-start;
+    grid-template-columns: 3fr 1fr;
+    align-items: start;
   }
   .toc-container {
     position: sticky;

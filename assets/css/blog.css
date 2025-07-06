@@ -1,0 +1,36 @@
+.post-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .post-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .toc-container {
+    position: sticky;
+    top: 4rem;
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .toc-container {
+    display: none;
+  }
+}
+
+.toc-container h2 {
+  margin-bottom: 0.5rem;
+}
+.toc-container nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+.toc-container nav ul ul {
+  padding-left: 1rem;
+}

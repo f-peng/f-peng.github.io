@@ -3,8 +3,12 @@
     <h1 class="text-4xl md:text-6xl font-bold mb-6">{{ .Title }}</h1>
     <div class="space-y-4">
       {{ range .Pages }}
+        {{ $link := .RelPermalink }}
+        {{ with .Params.source_link }}
+          {{ $link = . }}
+        {{ end }}
         <div class="article-card">
-          <h3 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <h3 class="title"><a href="{{ $link }}">{{ $link }}</a></h3>
           {{ with .Summary }}
             <p class="excerpt">{{ . }}</p>
           {{ end }}

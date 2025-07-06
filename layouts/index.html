@@ -8,8 +8,12 @@
     <h2 class="text-2xl font-semibold mb-4">Cyberwatch Articles</h2>
     <div class="space-y-4">
       {{ range first 5 (where site.RegularPages "File.Dir" "blog/cyberwatch/") }}
+        {{ $link := .RelPermalink }}
+        {{ with .Params.source_link }}
+          {{ $link = . }}
+        {{ end }}
         <div class="article-card">
-          <h3 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <h3 class="title"><a href="{{ $link }}">{{ $link }}</a></h3>
           {{ with .Summary }}
             <p class="excerpt">{{ . }}</p>
           {{ end }}

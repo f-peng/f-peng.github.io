@@ -4,7 +4,7 @@
     <h1 class="text-4xl md:text-6xl font-bold">{{ $author.Title }}</h1>
     <p class="text-xl mt-2">{{ $author.Params.role }}</p>
   </section>
-  <section class="container mx-auto px-4 my-8">
+  <section class="container mx-auto px-4 my-8 max-w-3xl">
     <h2 class="text-2xl font-semibold mb-4">Cyberwatch Articles</h2>
     <div class="space-y-4">
       {{ range first 5 (where site.RegularPages "File.Dir" "blog/cyberwatch/") }}

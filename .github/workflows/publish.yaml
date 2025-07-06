@@ -45,6 +45,8 @@ jobs:
     - name: Setup Pages
       id: pages
       uses: actions/configure-pages@v5
+    - name: Build Tailwind CSS
+      run: npx tailwindcss -i ./assets/css/dark.css -o ./assets/dist/main.css --minify
     - name: Build with Hugo
       env:
         HUGO_ENVIRONMENT: production

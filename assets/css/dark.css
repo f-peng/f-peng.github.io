@@ -1,12 +1,17 @@
-/* Dark theme overrides */
-body {
-  background-color: #121212;
-  color: #e2e8f0;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-html {
-  background-color: #121212;
-}
+@layer base {
+  /* Dark theme overrides */
+  body {
+    background-color: #121212;
+    color: #e2e8f0;
+  }
+
+  html {
+    background-color: #121212;
+  }
 
 h1.lg\:text-6xl {
   color: #f1f5f9;
@@ -94,4 +99,5 @@ html.dark .prose h4,
 html.dark .prose h5,
 html.dark .prose h6 {
   color: #f1f5f9 !important;
+}
 }

@@ -1,7 +1,7 @@
 {{ define "main" }}
   <div class="container mx-auto px-4 my-8 post-layout">
-    <article class="prose prose-invert blog-content md:col-span-3">
-      <h1>{{ .Title }}</h1>
+    <article class="article-card prose prose-invert blog-content md:col-span-3">
+      <h1 class="title">{{ .Title }}</h1>
       {{ .Content }}
     </article>
     {{ with .TableOfContents }}

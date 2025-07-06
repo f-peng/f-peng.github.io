@@ -3,3 +3,5 @@
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 {{ $blog := resources.Get "css/blog.css" | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $blog.RelPermalink }}">
+{{ $custom := resources.Get "css/custom.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $custom.RelPermalink }}">

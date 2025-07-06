@@ -1,0 +1,17 @@
+{{ define "main" }}
+  {{ $author := site.GetPage "authors/admin" }}
+  <section class="text-center my-8">
+    <h1 class="text-4xl md:text-6xl font-bold">{{ $author.Title }}</h1>
+    <p class="text-xl mt-2">{{ $author.Params.role }}</p>
+  </section>
+  <section class="container mx-auto px-4 my-8">
+    <h2 class="text-2xl font-semibold mb-4">Cyberwatch Articles</h2>
+    <ul class="space-y-2">
+      {{ range first 5 (where site.RegularPages "File.Dir" "blog/cyberwatch/") }}
+        <li>
+          <a class="text-blue-400 hover:underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+{{ end }}

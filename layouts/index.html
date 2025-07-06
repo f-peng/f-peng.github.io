@@ -13,7 +13,7 @@
           {{ $link = . }}
         {{ end }}
         <div class="article-card">
-          <h3 class="title"><a href="{{ $link }}">{{ $link }}</a></h3>
+          <h3 class="title"><a href="{{ $link }}">{{ .Title }}</a></h3>
           {{ with .Summary }}
             <p class="excerpt">{{ . }}</p>
           {{ end }}

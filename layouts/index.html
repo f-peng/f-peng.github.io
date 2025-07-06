@@ -10,7 +10,9 @@
       {{ range first 5 (where site.RegularPages "File.Dir" "blog/cyberwatch/") }}
         {{ $link := .RelPermalink }}
         {{ with .Params.source_link }}
-          {{ $link = . }}
+          {{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}
+            {{ $link = . }}
+          {{ end }}
         {{ end }}
         <div class="article-card">
           <h3 class="title"><a href="{{ $link }}">{{ .Title }}</a></h3>

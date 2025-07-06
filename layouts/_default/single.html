@@ -1,6 +1,8 @@
 {{ define "main" }}
-  <article class="prose mx-auto px-4 my-8">
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
-  </article>
+  <section class="container mx-auto px-4 my-8">
+    <div class="article-card prose">
+      <h1 class="title">{{ .Title }}</h1>
+      {{ .Content }}
+    </div>
+  </section>
 {{ end }}

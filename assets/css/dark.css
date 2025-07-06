@@ -100,3 +100,16 @@ html.dark .prose h6 {
 .hb-sidebar-container {
   display: none;
 }
+
+/* Display table of contents sidebar down to 768px */
+@media (min-width: 768px) {
+  nav.hb-toc {
+    display: block !important;
+  }
+}
+
+@media (max-width: 767px) {
+  nav.hb-toc {
+    display: none !important;
+  }
+}

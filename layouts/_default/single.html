@@ -7,7 +7,7 @@
     {{ with .TableOfContents }}
       <aside class="toc-container md:col-span-1 md:pl-8">
         <h2 class="text-xl font-semibold mb-2">Sommaire</h2>
-        {{ . }}
+        {{ . | safeHTML }}
       </aside>
     {{ end }}
   </div>

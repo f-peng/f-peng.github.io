@@ -95,3 +95,8 @@ html.dark .prose h5,
 html.dark .prose h6 {
   color: #f1f5f9 !important;
 }
+
+/* Hide sidebar to center blog pages */
+.hb-sidebar-container {
+  display: none;
+}

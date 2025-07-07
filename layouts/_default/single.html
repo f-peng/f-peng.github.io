@@ -5,9 +5,13 @@
       {{ .Content }}
     </article>
     {{ with .TableOfContents }}
+      {{ $toc := . }}
+      {{ if hasPrefix $.File.Path "blog/cyberwatch/" }}
+        {{ $toc = replaceRE `<a href="#([^"]+)" class="anews-link"></a><a href="[^"]+" class="anews-link">([^<]+)</a>` `<a href="#${1}" class="anews-link">${2}</a>` $toc }}
+      {{ end }}
       <aside class="toc-container md:col-span-1 md:pl-8">
         <h2 class="text-xl font-semibold mb-2">Sommaire</h2>
-        {{ . | safeHTML }}
+        {{ $toc | safeHTML }}
       </aside>
     {{ end }}
   </div>

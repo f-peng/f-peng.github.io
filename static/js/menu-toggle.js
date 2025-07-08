@@ -5,5 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
     toggle.addEventListener('click', function () {
       menu.classList.toggle('hidden');
     });
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (!menu.classList.contains('hidden')) {
+          menu.classList.add('hidden');
+        }
+      });
+    });
   }
 });

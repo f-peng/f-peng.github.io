@@ -16,10 +16,8 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 1rem;
-  transition: transform 0.2s ease;
 }
 .article-card:hover {
-  transform: scale(1.02);
   background: #21242b;
 }
 .article-card .title {

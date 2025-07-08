@@ -54,3 +54,20 @@ h1, h2, h3, h4, h5, h6 {
 .footer a:hover {
   text-decoration: underline;
 }
+
+/* Layout improvements */
+.articles-grid {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}

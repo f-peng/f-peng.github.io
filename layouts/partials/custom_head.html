@@ -1,12 +1,11 @@
-{{ $main := resources.Get "dist/main.css" | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $main.RelPermalink }}">
-{{ $base := resources.Get "css/base.css" | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $base.RelPermalink }}">
-{{ $style := resources.Get "css/dark.css" | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}">
-{{ $blog := resources.Get "css/blog.css" | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $blog.RelPermalink }}">
-{{ $custom := resources.Get "css/custom.css" | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $custom.RelPermalink }}">
-{{ $modern := resources.Get "css/modern.css" | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $modern.RelPermalink }}">
+{{ $bundle := slice
+    (resources.Get "dist/main.css")
+    (resources.Get "css/base.css")
+    (resources.Get "css/dark.css")
+    (resources.Get "css/blog.css")
+    (resources.Get "css/custom.css")
+    (resources.Get "css/modern.css")
+  | resources.Concat "css/bundle.css"
+  | resources.Minify
+  | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $bundle.RelPermalink }}">

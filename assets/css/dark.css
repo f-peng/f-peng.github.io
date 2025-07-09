@@ -1,12 +1,5 @@
 /* Dark theme overrides */
-body {
-  background-color: #0f1117;
-  color: #e4eaf0;
-}
 
-html {
-  background-color: #0f1117;
-}
 
 h1.lg\:text-6xl {
   color: #f1f5f9;

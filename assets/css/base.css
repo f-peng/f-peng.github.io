@@ -10,3 +10,17 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Inter', sans-serif;
   color: #e4eaf0;
 }
+
+/* Ensure images scale down on small screens */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Wrap long text on small screens */
+p,
+li {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+

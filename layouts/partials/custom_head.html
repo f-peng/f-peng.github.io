@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="/dist/main.css">
+{{ $main := resources.Get "dist/main.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $main.RelPermalink }}">
 {{ $style := resources.Get "css/dark.css" | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 {{ $blog := resources.Get "css/blog.css" | resources.Minify | resources.Fingerprint }}

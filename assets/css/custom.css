@@ -14,10 +14,12 @@
   border: 2px solid var(--color-accent);
 }
 .article-card .title {
-  font-size: 1.25rem;
+  /* Responsive heading size overriding Tailwind utilities */
+  font-size: clamp(1.5rem, 7vw, 2.25rem) !important;
+  line-height: 1.2;
   color: var(--color-text);
   font-weight: 600;
-  /* Wrap long article titles on mobile */
+  /* Allow very long titles to wrap correctly */
   overflow-wrap: anywhere;
   word-break: break-word;
 }

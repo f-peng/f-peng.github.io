@@ -10,16 +10,24 @@ body {
   line-height: 1.75;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.H1, .H2, .H3, .H4, .H5, .H6 {
   line-height: 1.25;
   /* Allow long headings to wrap on small screens */
   overflow-wrap: anywhere;
   word-break: break-word;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
+h1, .H1 { font-size: clamp(1.75rem, 5vw, 2.5rem); }
+h2, .H2 { font-size: clamp(1.5rem, 4.5vw, 2rem); }
+h3, .H3 { font-size: clamp(1.25rem, 4vw, 1.5rem); }
+
+/* override large hero titles from Tailwind utilities */
+.title {
+  font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 
 /* Layout */
 .container {

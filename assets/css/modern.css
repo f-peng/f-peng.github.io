@@ -67,3 +67,17 @@ h3, .H3 { font-size: clamp(1.25rem, 4vw, 1.5rem); }
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
 }
+
+/* Make code blocks responsive on mobile */
+pre {
+  white-space: pre-wrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+pre code {
+  white-space: inherit;
+  overflow-wrap: anywhere;
+}
+code {
+  word-break: break-word;
+}

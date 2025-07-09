@@ -16,4 +16,9 @@ img {
   max-width: 100%;
   height: auto;
 }
-
+/* Wrap long text on small screens */
+p,
+li {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}

@@ -30,20 +30,24 @@
 }
 
 /* Blog tables should wrap and scroll on mobile */
-  .blog-content table {
-    width: 100%;
-    table-layout: fixed;
-  }
-  .blog-content th,
-  .blog-content td {
-    word-break: break-word;
-    padding: 0.25rem;
-  }
-  /* Ensure text wraps within blog content */
-  .blog-content p,
-  .blog-content li {
-    overflow-wrap: anywhere;
-  }
+.blog-content {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.blog-content table {
+  width: 100%;
+  table-layout: fixed;
+}
+.blog-content th,
+.blog-content td {
+  word-break: break-word;
+  padding: 0.25rem;
+}
+/* Ensure text wraps within blog content */
+.blog-content p,
+.blog-content li {
+  overflow-wrap: anywhere;
+}
 @media (max-width: 767px) {
   .blog-content table {
     display: block;

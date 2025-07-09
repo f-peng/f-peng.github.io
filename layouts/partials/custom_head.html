@@ -8,3 +8,5 @@
 <link rel="stylesheet" href="{{ $blog.RelPermalink }}">
 {{ $custom := resources.Get "css/custom.css" | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $custom.RelPermalink }}">
+{{ $modern := resources.Get "css/modern.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $modern.RelPermalink }}">

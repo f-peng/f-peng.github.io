@@ -6,8 +6,11 @@
     <meta name="color-scheme" content="dark">
   </head>
 <body>
+  <a href="#main-content" class="skip-link">Aller au contenu</a>
   {{ partial "site_header.html" . }}
-  {{ block "main" . }}{{ end }}
+  <main id="main-content">
+    {{ block "main" . }}{{ end }}
+  </main>
   {{ partial "site_footer.html" . }}
   {{ partial "matomo.html" . }}
 </body>

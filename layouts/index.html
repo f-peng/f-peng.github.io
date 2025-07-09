@@ -7,7 +7,7 @@
   <section class="container mx-auto px-4 my-8 max-w-3xl">
     <h2 class="text-2xl font-semibold mb-4">Cyberwatch Articles</h2>
     <div class="articles-grid space-y-4 md:space-y-0">
-      {{ range first 5 (where site.RegularPages "File.Dir" "blog/cyberwatch/") }}
+      {{ range first 5 (where site.RegularPages "File.Dir" "cyber/") }}
         {{ $link := .RelPermalink }}
         {{ $external := false }}
         {{ with .Params.source_link }}

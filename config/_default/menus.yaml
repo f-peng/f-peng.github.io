@@ -5,6 +5,9 @@ main:
   - name: Home
     url: /
     weight: 10
+  - name: Cyber
+    url: cyber/
+    weight: 20
 #  - name: Topics
 #    url: tags/
 #    weight: 20

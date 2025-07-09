@@ -1,9 +1,5 @@
 /* Custom styles for Cybowl */
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', sans-serif;
-  
-}
 
 .article-card {
   background: #1a1c22;
@@ -54,18 +50,6 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-@media (min-width: 640px) {
-  .articles-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .articles-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .header {

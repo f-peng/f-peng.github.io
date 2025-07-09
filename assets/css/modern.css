@@ -12,6 +12,9 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.25;
+  /* Allow long headings to wrap on small screens */
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 h1 { font-size: 2.5rem; }

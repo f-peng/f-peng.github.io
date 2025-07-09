@@ -17,6 +17,9 @@
   font-size: 1.25rem;
   color: var(--color-text);
   font-weight: 600;
+  /* Wrap long article titles on mobile */
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .article-card .excerpt {
   color: #98a1b2;

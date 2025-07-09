@@ -1,5 +1,5 @@
 var path = window.location.pathname;
-var addAnews = path.indexOf('/blog/cyberwatch/') === 0 || path === '/privacy/';
+var addAnews = path.indexOf('/cyber/') === 0 || path === '/privacy/';
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('a').forEach(function(a){

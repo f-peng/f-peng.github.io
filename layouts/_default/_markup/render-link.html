@@ -1,7 +1,7 @@
 {{- $href := .Destination | safeURL -}}
 {{- $text := .Text | safeHTML -}}
 {{- $classes := slice -}}
-{{- if or (hasPrefix .Page.File.Path "blog/cyberwatch/") (eq .Page.File.Path "privacy.md") -}}
+{{- if or (hasPrefix .Page.File.Path "cyber/") (eq .Page.File.Path "privacy.md") -}}
   {{- $classes = $classes | append "anews-link" -}}
 {{- end -}}
 {{- if hasPrefix (.Text | plainify) "#" -}}

@@ -37,8 +37,15 @@ h3, .H3 { font-size: clamp(1.25rem, 4vw, 1.5rem); }
 }
 
 .article-card {
+  background: var(--color-surface);
+  border-radius: 12px;
   margin-bottom: 1.5rem;
   padding: 1.75rem;
+  transition: background .3s ease;
+}
+
+.article-card:hover {
+  background: #21242b;
 }
 
 .article-card--featured {
@@ -46,11 +53,26 @@ h3, .H3 { font-size: clamp(1.25rem, 4vw, 1.5rem); }
   border-color: var(--color-accent);
 }
 
+.article-card .title {
+  font-size: clamp(1.5rem, 7vw, 2.25rem) !important;
+  line-height: 1.2;
+  color: var(--color-text);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.article-card .excerpt {
+  color: #98a1b2;
+  margin-top: 0.5rem;
+}
+
 /* Badges */
 .badge {
   border-radius: 8px;
   padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
+  font-weight: 600;
 }
 .badge.alert {
   background: var(--color-alert);
@@ -59,6 +81,40 @@ h3, .H3 { font-size: clamp(1.25rem, 4vw, 1.5rem); }
 .badge.info {
   background: var(--color-accent);
   color: var(--color-bg);
+}
+
+/* Footer styling */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  background: var(--color-bg);
+  color: #98a1b2;
+}
+
+.footer a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Layout improvements */
+.articles-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-bottom: 2rem;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 /* Responsive grid */
@@ -79,5 +135,4 @@ pre code {
   overflow-wrap: anywhere;
 }
 code {
-  word-break: break-word;
-}
+  word-break: break-word;}

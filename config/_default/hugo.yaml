@@ -74,6 +74,8 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+      linkify:
+        heading: false
     parser:
       attribute:
         block: true

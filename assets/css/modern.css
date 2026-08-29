@@ -36,62 +36,296 @@ h3, .H3 { font-size: clamp(1.25rem, 4vw, 1.5rem); }
   padding-right: 1rem;
 }
 
+/* ---------- Hero (home page) ---------- */
+.hero {
+  max-width: 46rem;
+  margin: 3rem auto 3.5rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.hero-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 999px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin: 0 0 .75rem;
+}
+
+.hero .hero-tagline {
+  color: var(--color-text-muted);
+  font-size: 1.15rem;
+  max-width: 40ch;
+  margin: 0 auto 1.5rem;
+}
+
+.hero-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: var(--font-mono);
+  font-size: .85rem;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: .4rem .9rem;
+  margin-bottom: 1.75rem;
+}
+
+.hero-stat strong {
+  color: var(--color-accent);
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  font-weight: 600;
+  padding: .7rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -8px var(--color-accent-soft);
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+.section-heading a {
+  font-size: .95rem;
+  white-space: nowrap;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.section-heading a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Article cards ---------- */
 .article-card {
   background: var(--color-surface);
-  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
   margin-bottom: 1.5rem;
   padding: 1.75rem;
-  transition: background .3s ease;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
 }
 
 .article-card:hover {
-  background: #21242b;
+  background: var(--color-surface-hover);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
 }
 
 .article-card--featured {
-  border-width: 3px;
+  grid-column: 1 / -1;
   border-color: var(--color-accent);
+  background: linear-gradient(160deg, var(--color-surface) 0%, var(--color-surface-hover) 100%);
+}
+
+.article-card--featured .title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  color: var(--color-text-muted);
+  margin-bottom: .75rem;
+}
+
+.card-meta .badge.featured {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
 }
 
 .article-card .title {
   font-size: clamp(1.5rem, 7vw, 2.25rem) !important;
   line-height: 1.2;
   color: var(--color-text);
-  font-weight: 600;
+  font-weight: 700;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
 
+.article-card .title a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.article-card .title a:hover {
+  color: var(--color-accent);
+}
+
 .article-card .excerpt {
-  color: #98a1b2;
+  color: var(--color-text-muted);
   margin-top: 0.5rem;
+  /* Some posts' auto-generated summary runs much longer than intended
+     (raw HTML in the content confuses Hugo's word-count truncation) —
+     clamp defensively so the card layout stays predictable. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+.article-card--featured .excerpt {
+  -webkit-line-clamp: 6;
+}
+
+/* Some posts' summary contains raw headings/paragraphs (malformed content
+   from the generation pipeline) — neutralize them so a clamped excerpt
+   still reads as one flowing block of muted text, not a mix of huge
+   heading text and body text. */
+.excerpt h1, .excerpt h2, .excerpt h3, .excerpt h4, .excerpt h5, .excerpt h6,
+.row-excerpt h1, .row-excerpt h2, .row-excerpt h3, .row-excerpt h4, .row-excerpt h5, .row-excerpt h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  margin: 0;
+  display: inline;
+}
+
+.excerpt p, .row-excerpt p {
+  display: inline;
+  margin: 0;
+}
+
+.excerpt a, .row-excerpt a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* ---------- Article list (professional, compact) ---------- */
+.article-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.article-row {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.article-row:first-child {
+  padding-top: 0;
+}
+
+.article-row:last-child {
+  border-bottom: none;
+}
+
+.row-date {
+  flex: 0 0 auto;
+  width: 6.5rem;
+  padding-top: .2rem;
+  font-family: var(--font-mono);
+  font-size: .85rem;
+  color: var(--color-text-muted);
+}
+
+.row-body {
+  min-width: 0;
+}
+
+.row-title {
+  font-size: 1.15rem !important;
+  font-weight: 600;
+  margin: 0 0 .35rem;
+  line-height: 1.35;
+}
+
+.row-title a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.row-title a:hover {
+  color: var(--color-accent);
+}
+
+.row-excerpt {
+  color: var(--color-text-muted);
+  font-size: .95rem;
+  margin: 0;
+  /* Same defensive clamp as .excerpt — some posts' summary runs long. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+@media (max-width: 540px) {
+  .article-row {
+    flex-direction: column;
+    gap: .35rem;
+  }
+  .row-date {
+    width: auto;
+    padding-top: 0;
+  }
 }
 
 /* Badges */
 .badge {
+  display: inline-block;
   border-radius: 8px;
   padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
   font-weight: 600;
 }
 .badge.alert {
-  background: var(--color-alert);
-  color: #fff;
+  background: var(--color-critical-soft);
+  color: var(--color-critical);
 }
 .badge.info {
-  background: var(--color-accent);
-  color: var(--color-bg);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
 }
 
 /* Footer styling */
 .footer {
   display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.5rem;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
   font-size: 0.9rem;
   background: var(--color-bg);
-  color: #98a1b2;
+  color: var(--color-text-muted);
 }
 
 .footer a {
@@ -101,6 +335,50 @@ h3, .H3 { font-size: clamp(1.25rem, 4vw, 1.5rem); }
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+/* ---------- Post meta (single article) ---------- */
+.post-meta {
+  display: flex;
+  justify-content: center;
+  gap: .75rem;
+  font-family: var(--font-mono);
+  font-size: .85rem;
+  color: var(--color-text-muted);
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ---------- Pagination ---------- */
+.pager {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.5rem 0 1rem;
+  font-family: var(--font-mono);
+  font-size: .9rem;
+}
+
+.pager a {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .6rem 1.1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: border-color .15s ease, color .15s ease;
+}
+
+.pager a:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.pager .pager-status {
+  color: var(--color-text-muted);
 }
 
 /* Layout improvements */
@@ -115,6 +393,36 @@ h3, .H3 { font-size: clamp(1.25rem, 4vw, 1.5rem); }
   position: sticky;
   top: 0;
   z-index: 50;
+}
+
+/* Mobile nav dropdown */
+@media (max-width: 767px) {
+  #nav-menu:not(.hidden) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: .5rem 1rem 1rem;
+    box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.6);
+  }
+
+  #nav-menu li {
+    width: 100%;
+  }
+
+  #nav-menu a {
+    display: block;
+    padding: .85rem .5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  #nav-menu li:last-child a {
+    border-bottom: none;
+  }
 }
 
 /* Responsive grid */
@@ -135,4 +443,5 @@ pre code {
   overflow-wrap: anywhere;
 }
 code {
-  word-break: break-word;}
+  word-break: break-word;
+}

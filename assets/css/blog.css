@@ -6,9 +6,10 @@
     overflow-y: auto;
     width: 100%;
     padding: 1rem;
-    background-color: #1f2937;
-    border-left: 3px solid #3b82f6;
-    border-radius: 0.5rem;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius);
   }
 }
 
@@ -18,21 +19,64 @@
   }
 }
 
-.toc-container h2 {
-  margin-bottom: 0.5rem;
+/* Title: either our own <h2> (native Hugo ToC, older posts) or the
+   hand-authored <div class="toc-title"> baked into the daily post HTML
+   (current pipeline, ~all recent posts) */
+.toc-container h2,
+.toc-container .toc-title {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding-bottom: .6rem;
+  margin-bottom: .4rem;
+  border-bottom: 1px solid var(--color-border);
 }
+
 .toc-container nav ul {
   list-style: none;
   padding-left: 0;
+  font-size: .92rem;
 }
 .toc-container nav ul ul {
   padding-left: 1rem;
+}
+
+.toc-container nav li {
+  border-bottom: 1px solid var(--color-border);
+}
+.toc-container nav li:last-child {
+  border-bottom: none;
+}
+
+.toc-container nav a {
+  display: block;
+  padding: .55rem .1rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color .15s ease;
+}
+
+.toc-container nav a:hover,
+.toc-container nav a:focus-visible {
+  color: var(--color-accent);
 }
 
 /* Blog tables should wrap and scroll on mobile */
 .blog-content {
   overflow-wrap: anywhere;
   word-break: break-word;
+}
+
+/* Justified body copy, with hyphenation so justify doesn't leave big gaps.
+   lang="fr" is set on the <article> for cyber/privacy content so the
+   browser picks French hyphenation rules. */
+.blog-content p {
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
 }
 .blog-content table {
   width: 100%;

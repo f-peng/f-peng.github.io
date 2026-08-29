@@ -2,12 +2,7 @@
   {{ $briefings := where site.RegularPages "File.Dir" "cyber/" }}
   <section class="hero">
     <span class="hero-mark" aria-hidden="true">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/>
-        <circle cx="8.5" cy="11" r="2" fill="currentColor"/>
-        <circle cx="15.5" cy="11" r="2" fill="currentColor"/>
-        <path d="M9 16.5C9.8 17.5 10.8 18 12 18C13.2 18 14.2 17.5 15 16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
+      <img src="{{ "media/cybowl-mark.png" | relURL }}" alt="" width="32" height="32">
     </span>
     <h1>Cybowl</h1>
     <p class="hero-tagline">La veille cybersécurité, condensée chaque jour. France et international, sans le bruit.</p>

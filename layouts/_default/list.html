@@ -1,8 +1,9 @@
 {{ define "main" }}
-  <section class="container mx-auto px-4 my-8 text-center">
-    <h1 class="text-4xl md:text-6xl font-bold mb-6">{{ .Title }}</h1>
-    <div class="space-y-4">
-      {{ range .Pages }}
+  <section class="container mx-auto px-4 my-8 max-w-3xl">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-center">{{ .Title }}</h1>
+    {{ $paginator := .Paginate .Pages }}
+    <ul class="article-list">
+      {{ range $paginator.Pages }}
         {{ $link := .RelPermalink }}
         {{ $external := false }}
         {{ with .Params.source_link }}
@@ -11,16 +12,34 @@
             {{ $external = true }}
           {{ end }}
         {{ end }}
-        <div class="article-card">
-          <h3 class="title"><a href="{{ $link }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ .Title }}</a></h3>
-          {{ with .Summary }}
-            <p class="excerpt">{{ . }}</p>
-          {{ end }}
-          {{ with .Params.category }}
-            <span class="badge">{{ . }}</span>
-          {{ end }}
-        </div>
+        <li class="article-row">
+          <time class="row-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>
+          <div class="row-body">
+            <h3 class="row-title"><a href="{{ $link }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ .Title }}</a></h3>
+            {{ with .Summary }}
+              <div class="row-excerpt">{{ . }}</div>
+            {{ end }}
+            {{ with .Params.category }}
+              <span class="badge info">{{ . }}</span>
+            {{ end }}
+          </div>
+        </li>
       {{ end }}
-    </div>
+    </ul>
+    {{ if gt $paginator.TotalPages 1 }}
+      <nav class="pager" aria-label="Pagination">
+        {{ if $paginator.HasPrev }}
+          <a href="{{ $paginator.Prev.URL }}">← Plus récent</a>
+        {{ else }}
+          <span></span>
+        {{ end }}
+        <span class="pager-status">Page {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+        {{ if $paginator.HasNext }}
+          <a href="{{ $paginator.Next.URL }}">Plus ancien →</a>
+        {{ else }}
+          <span></span>
+        {{ end }}
+      </nav>
+    {{ end }}
   </section>
 {{ end }}

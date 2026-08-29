@@ -1,25 +1,21 @@
 /* Dark theme overrides */
 
-
 h1.lg\:text-6xl {
-  color: #f1f5f9;
+  color: var(--color-text);
 }
 
 .H2, .H3, .H4 {
-  color: #f1f5f9;
+  color: var(--color-text);
 }
 
-.anews-link {
-  color: #e3f705;
-}
-
+/* Single accent for every in-content link — no more competing hues */
+.anews-link,
 .hashtag-link {
-  color: #38bdf8;
+  color: var(--color-accent);
 }
-
 
 h1, h2, h3, h4, h5, h6 {
-  color: #ffffff;
+  color: var(--color-text);
 }
 
 /* Ensure bold text inside headings inherits heading color */
@@ -44,40 +40,39 @@ strong {
 }
 
 p, li {
-  color: #e4eaf0;
+  color: var(--color-text);
 }
 
 a {
-  color: #4cc9f0;
+  color: var(--color-accent);
 }
 
 .bg-white,
 .bg-gray-50,
 .bg-gray-100,
 .bg-slate-50 {
-  background-color: #1a1c22 !important;
+  background-color: var(--color-surface) !important;
 }
 
 .text-slate-900,
 .text-gray-900,
 .text-black {
-  color: #e4eaf0 !important;
+  color: var(--color-text) !important;
 }
-
 
 nav {
-  background-color: #0f1117;
+  background-color: var(--color-bg);
 }
 nav a {
-  color: #e4eaf0;
+  color: var(--color-text);
 }
 nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--color-accent-soft);
 }
 
 footer {
-  background-color: #0f1117;
-  color: #e4eaf0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 html.dark .prose h1,
@@ -86,7 +81,7 @@ html.dark .prose h3,
 html.dark .prose h4,
 html.dark .prose h5,
 html.dark .prose h6 {
-  color: #f1f5f9 !important;
+  color: var(--color-text) !important;
 }
 
 /* Hide sidebar to center blog pages */

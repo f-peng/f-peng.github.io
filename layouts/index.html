@@ -1,13 +1,53 @@
 {{ define "main" }}
-  {{ $author := site.GetPage "authors/admin" }}
-  <section class="text-center my-8">
-    <h1 class="text-4xl md:text-6xl font-bold">{{ $author.Title }}</h1>
-    <p class="text-xl mt-2">{{ $author.Params.role }}</p>
+  {{ $briefings := where site.RegularPages "File.Dir" "cyber/" }}
+  <section class="hero">
+    <span class="hero-mark" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="8.5" cy="11" r="2" fill="currentColor"/>
+        <circle cx="15.5" cy="11" r="2" fill="currentColor"/>
+        <path d="M9 16.5C9.8 17.5 10.8 18 12 18C13.2 18 14.2 17.5 15 16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <h1>Cybowl</h1>
+    <p class="hero-tagline">La veille cybersécurité, condensée chaque jour. France et international, sans le bruit.</p>
+    <div><span class="hero-stat"><strong>{{ len $briefings }}</strong> briefings publiés</span></div>
+    <div>
+      {{ with index $briefings 0 }}
+        <a class="hero-cta" href="{{ .RelPermalink }}">Lire la dernière veille →</a>
+      {{ end }}
+    </div>
   </section>
   <section class="container mx-auto px-4 my-8 max-w-3xl">
-    <h2 class="text-2xl font-semibold mb-4">Cyberwatch Articles</h2>
-    <div class="articles-grid space-y-4 md:space-y-0">
-      {{ range first 5 (where site.RegularPages "File.Dir" "cyber/") }}
+    <div class="section-heading">
+      <h2>Dernières veilles</h2>
+      <a href="{{ "/cyber/" | relURL }}">Voir tous les briefings →</a>
+    </div>
+    {{ range $i, $page := first 1 $briefings }}
+      {{ $link := $page.RelPermalink }}
+      {{ $external := false }}
+      {{ with $page.Params.source_link }}
+        {{ if or (hasPrefix . "http://") (hasPrefix . "https://") }}
+          {{ $link = . }}
+          {{ $external = true }}
+        {{ end }}
+      {{ end }}
+      <div class="article-card article-card--featured">
+        <div class="card-meta">
+          <span class="badge featured">Dernière veille</span>
+          <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "02/01/2006" }}</time>
+        </div>
+        <h3 class="title"><a href="{{ $link }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ $page.Title }}</a></h3>
+        {{ with $page.Summary }}
+          <div class="excerpt">{{ . }}</div>
+        {{ end }}
+        {{ with $page.Params.category }}
+          <span class="badge info">{{ . }}</span>
+        {{ end }}
+      </div>
+    {{ end }}
+    <ul class="article-list">
+      {{ range after 1 (first 5 $briefings) }}
         {{ $link := .RelPermalink }}
         {{ $external := false }}
         {{ with .Params.source_link }}
@@ -16,16 +56,16 @@
             {{ $external = true }}
           {{ end }}
         {{ end }}
-        <div class="article-card">
-          <h3 class="title"><a href="{{ $link }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ .Title }}</a></h3>
-          {{ with .Summary }}
-            <p class="excerpt">{{ . }}</p>
-          {{ end }}
-          {{ with .Params.category }}
-            <span class="badge">{{ . }}</span>
-          {{ end }}
-        </div>
+        <li class="article-row">
+          <time class="row-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>
+          <div class="row-body">
+            <h3 class="row-title"><a href="{{ $link }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ .Title }}</a></h3>
+            {{ with .Summary }}
+              <div class="row-excerpt">{{ . }}</div>
+            {{ end }}
+          </div>
+        </li>
       {{ end }}
-    </div>
+    </ul>
   </section>
 {{ end }}

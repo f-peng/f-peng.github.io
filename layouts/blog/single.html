@@ -9,6 +9,26 @@
       </p>
       {{ .Content }}
     </article>
+    {{ if hasPrefix .File.Path "cyber/" }}
+      <nav class="article-pager" aria-label="Navigation entre articles">
+        {{ with .PrevInSection }}
+          <a href="{{ .RelPermalink }}" class="article-pager-link is-prev">
+            <span aria-hidden="true">←</span>
+            <span class="article-pager-text">{{ .Title }}</span>
+          </a>
+        {{ else }}
+          <span></span>
+        {{ end }}
+        {{ with .NextInSection }}
+          <a href="{{ .RelPermalink }}" class="article-pager-link is-next">
+            <span class="article-pager-text">{{ .Title }}</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        {{ else }}
+          <span></span>
+        {{ end }}
+      </nav>
+    {{ end }}
     {{ $toc := .TableOfContents }}
     {{ if in $toc "<li>" }}
       {{ if hasPrefix .File.Path "cyber/" }}

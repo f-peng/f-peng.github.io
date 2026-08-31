@@ -109,6 +109,53 @@
   word-break: break-word;
 }
 
+/* ---------- Prev/next article nav, above the TOC ---------- */
+.article-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  order: -2; /* above .toc-container (order: -1) and the article */
+}
+
+.article-pager-link {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  min-width: 0;
+  max-width: 70%;
+  padding: .55rem .9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: .85rem;
+  transition: border-color .15s ease, color .15s ease;
+}
+
+.article-pager-link:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.article-pager-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .article-pager {
+    gap: .5rem;
+  }
+  .article-pager-link {
+    max-width: calc(50% - .25rem);
+    padding: .5rem .65rem;
+    font-size: .75rem;
+  }
+}
+
 /* Justified body copy, with hyphenation so justify doesn't leave big gaps.
    lang="fr" is set on the <article> for cyber/privacy content so the
    browser picks French hyphenation rules. */

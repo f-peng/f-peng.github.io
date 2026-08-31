@@ -10,11 +10,13 @@
   --color-text-muted: #97a1b5;
 
   /* Brand accent (single source of truth — used everywhere) */
-  --color-accent: #34d6c4;
-  --color-accent-soft: rgba(52, 214, 196, 0.14);
-  --color-accent-contrast: #06120f;
+  --color-accent: #22e0f0;
+  --color-accent-soft: rgba(34, 224, 240, 0.14);
+  --color-accent-contrast: #06171a;
 
-  /* Severity — reserved for genuine critical signals (CVSS, alerts) */
+  /* Severity scale for CVSS/alerts: info (accent) < warning < critical */
+  --color-warning: #f5b942;
+  --color-warning-soft: rgba(245, 185, 66, 0.14);
   --color-critical: #ef4444;
   --color-critical-soft: rgba(239, 68, 68, 0.14);
 
@@ -22,6 +24,11 @@
   --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 
   --radius: 14px;
+
+  /* Single content width used everywhere: header, footer, hero, lists,
+     articles. Everything lines up to the same column regardless of
+     screen size instead of each section picking its own width. */
+  --content-width: 56rem;
 }
 
 /* Base styles shared across themes */
@@ -53,7 +60,17 @@ img {
 p, li {
   overflow-wrap: anywhere;
   word-break: break-word;
-  max-width: 65ch;
+}
+
+/* Single width column, reused by header/footer/hero/lists/articles. */
+.site-width {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
 }
 
 .skip-link {

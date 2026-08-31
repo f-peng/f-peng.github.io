@@ -1,37 +1,76 @@
-@media (min-width: 768px) {
-  .toc-container {
-    position: sticky;
-    top: 4rem;
-    max-height: calc(100vh - 6rem);
-    overflow-y: auto;
-    width: 100%;
-    padding: 1rem;
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-left: 3px solid var(--color-accent);
-    border-radius: var(--radius);
-  }
+/* ---------- Article layout: single column, no sidebar ---------- */
+.article-layout {
+  display: flex !important;
+  flex-direction: column !important;
+  max-width: var(--content-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-@media (max-width: 767px) {
-  .toc-container {
-    display: none;
-  }
+/* The content pipeline's own embedded TOC script always inserts its
+   markup *after* the article in the DOM — `order` puts it back above
+   visually without needing to fight that script. */
+.article-layout > .toc-container {
+  order: -1;
 }
 
-/* Title: either our own <h2> (native Hugo ToC, older posts) or the
-   hand-authored <div class="toc-title"> baked into the daily post HTML
-   (current pipeline, ~all recent posts) */
-.toc-container h2,
-.toc-container .toc-title {
-  font-size: .75rem;
+.post-title {
+  text-align: left;
+}
+
+/* ---------- TOC: collapsible, full width, above the article ----------
+   Two possible sources render with the same .toc-container class:
+   - <details><summary>Sommaire</summary>{{ .TableOfContents }}</details>
+     from our own template (older posts, native Hugo ToC)
+   - <aside><div class="toc-title">Sommaire</div><nav>...</aside> baked
+     into the post HTML by the content pipeline (recent posts) —
+     progressively enhanced into the same collapse behavior by
+     static/js/toc-accordion.js */
+.toc-container {
+  width: 100%;
+  margin-bottom: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.toc-container summary,
+.toc-container > .toc-title {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .85rem 1.1rem;
+  font-family: var(--font-mono);
+  font-size: .8rem;
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--color-text-muted);
-  padding-bottom: .6rem;
-  margin-bottom: .4rem;
-  border-bottom: 1px solid var(--color-border);
+}
+.toc-container summary::-webkit-details-marker {
+  display: none;
+}
+
+.toc-container summary::before,
+.toc-container > .toc-title::before {
+  content: "▶";
+  font-size: .65rem;
+  color: var(--color-accent);
+  transition: transform .15s ease;
+  display: inline-block;
+}
+.toc-container[open] summary::before,
+.toc-container > .toc-title[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+.toc-container nav {
+  padding: 0 1.1rem 1rem;
+}
+.toc-container.toc-collapsed nav {
+  display: none;
 }
 
 .toc-container nav ul {
@@ -44,10 +83,10 @@
 }
 
 .toc-container nav li {
-  border-bottom: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border);
 }
-.toc-container nav li:last-child {
-  border-bottom: none;
+.toc-container nav li:first-child {
+  border-top: none;
 }
 
 .toc-container nav a {

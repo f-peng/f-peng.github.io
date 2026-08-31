@@ -1,6 +1,6 @@
 {{ define "main" }}
-  <section class="container mx-auto px-4 my-8 max-w-3xl">
-    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-center">{{ .Title }}</h1>
+  <section class="site-width my-8">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6">{{ .Title }}</h1>
     {{ $paginator := .Paginate .Pages }}
     <ul class="article-list">
       {{ range $paginator.Pages }}
